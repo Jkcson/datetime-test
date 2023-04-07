@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Python Runtime HTML</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+	<h1>Python Runtime HTML Page</h1>
+	<p>The current date and time is: <span id="datetime"></span></p>
+
+	<script>
+		$(document).ready(function() {
+			$.get("datetime.py", function(data) {
+				$("#datetime").text(data);
+			});
+		});
+	</script>
+</body>
+</html>
