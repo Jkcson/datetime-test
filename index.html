@@ -1,20 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Display Python Variable</title>
+	<title>Test Website</title>
 </head>
 <body>
-    <h1 id="myVariable"></h1>
-
-    <script>
-        // Make an HTTP GET request to the Python server
-        fetch('http://localhost:8000')
-            .then(response => response.json())
-            .then(data => {
-                // Display the variable in the HTML page
-                document.getElementById('myVariable').innerHTML = data.variable;
-            })
-            .catch(error => console.error(error));
-    </script>
+	<h1>Test</h1>
 </body>
 </html>
