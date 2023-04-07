@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Python Runtime HTML</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Display Python Variable</title>
 </head>
 <body>
-	<h1>Python Runtime HTML Page</h1>
-	<p>The current date and time is: <span id="datetime"></span></p>
+    <h1 id="myVariable"></h1>
 
-	<script>
-		$(document).ready(function() {
-			$.get("datetime.py", function(data) {
-				$("#datetime").text(data);
-			});
-		});
-	</script>
+    <script>
+        // Make an HTTP GET request to the Python server
+        fetch('http://localhost:8000')
+            .then(response => response.json())
+            .then(data => {
+                // Display the variable in the HTML page
+                document.getElementById('myVariable').innerHTML = data.variable;
+            })
+            .catch(error => console.error(error));
+    </script>
 </body>
 </html>
